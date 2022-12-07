@@ -1,6 +1,6 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone'
-import { BeersAPI } from './api/beers/beers.api';
+import { BeersAPI } from './api';
 import { beersResolver, beersSchema } from './schemas';
 import { AppContext } from './types/common.types';
 

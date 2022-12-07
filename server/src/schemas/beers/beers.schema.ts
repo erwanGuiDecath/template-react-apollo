@@ -1,4 +1,13 @@
 export const beersSchema = `#graphql
+type Query {
+  beers: [Beer!]!
+  beer(id: ID!): Beer
+}
+
+type Mutation {
+  addBeer(beer: BeerInput!): [Beer!]!
+}
+
 type Beer {
   id: ID!
   title: String
@@ -11,14 +20,5 @@ input BeerInput {
   title: String
   brands: String
   volume: Float
-}
-
-type Query {
-  beers: [Beer!]!
-  beer: Beer
-}
-
-type Mutation {
-  addBeer(beer: BeerInput!): [Beer!]!
 }
 `;
