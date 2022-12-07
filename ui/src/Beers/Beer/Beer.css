@@ -1,0 +1,14 @@
+.beer-container {
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-image: url('/public/beer.jpeg');
+  background-color: white;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 40px;
+  font-family: cursive;
+}

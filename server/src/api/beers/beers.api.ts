@@ -1,4 +1,5 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
+import { beers } from '../../mocks/beers/beers.mock';
 import { Beer } from './beers.types';
 
 export class BeersAPI extends RESTDataSource {
@@ -10,6 +11,7 @@ export class BeersAPI extends RESTDataSource {
   }
 
   async getBeers(): Promise<Beer[]> {
+    return beers;
     return this.get(`beers`);
   }
 

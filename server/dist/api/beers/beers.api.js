@@ -1,4 +1,5 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
+import { beers } from '../../mocks/beers/beers.mock';
 export class BeersAPI extends RESTDataSource {
     constructor() {
         // Always call super()
@@ -7,6 +8,7 @@ export class BeersAPI extends RESTDataSource {
         this.baseURL = 'https://beers.com/';
     }
     async getBeers() {
+        return beers;
         return this.get(`beers`);
     }
     async getBeer(id) {
