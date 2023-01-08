@@ -1,20 +1,36 @@
-import { BeersAPI } from '../api'
+import { GraphQLResolveInfo, GraphQLScalarType } from "graphql";
+import { BeersAPI } from "../api";
 
 interface DataSources {
-    beersAPI: BeersAPI
+  beersAPI: BeersAPI;
 }
 
 export type AppContext = {
-    dataSources: DataSources
-}
+  dataSources: DataSources;
+};
 
 export type QueryBeerArgs = {
-    id: string
+  id: string;
+};
+
+export type Resolver = (
+  parent: any,
+  args: any,
+  context: AppContext,
+  info: GraphQLResolveInfo
+) => any;
+
+export interface ObjectResolvers {
+  [key: string]: Resolver;
+}
+
+export interface Resolvers {
+  [key: string]: ObjectResolvers | GraphQLScalarType;
 }
 
 export type Beer = {
-    id: string
-    title: string
-    brands: string
-    volume: number
-}
+  id: string;
+  title: string;
+  brands: string;
+  volume: number;
+};

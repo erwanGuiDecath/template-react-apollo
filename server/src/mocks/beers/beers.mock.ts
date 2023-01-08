@@ -3,7 +3,7 @@ import { Beer } from "../../api";
 export const beers: Beer[] = [
   {
     id: 'beers-1',
-    title: 'Paie Dieu',
+    title: 'Paix Dieu',
     brands: 'JC',
     quantity: 75,
   },
