@@ -25,13 +25,44 @@ type Context {
   value: String
 }
 
-type Container {
+interface Container {
+  id: ID!
+  name: String
+  type: TypeContainerEnum
+  contexts: [Context!]!
+}
+
+type ContainerLayout implements Container {
+  id: ID!
+  name: String
+  type: TypeContainerEnum
+  contexts: [Context!]!
+  containers: [Container!]!
+  flexDirection: FlexDirectionEnum
+}
+
+type ContainerComponents implements Container {
+  id: ID!
+  name: String
+  type: TypeContainerEnum
+  contexts: [Context!]!
+  components: [Component!]!
+}
+
+type ContainerTemplate implements Container {
   id: ID!
   name: String
   description: String
   type: TypeContainerEnum
   scope: ScopeContainerEnum
   contexts: [Context!]!
+  containers: [Container!]!
+  flexDirection: FlexDirectionEnum
+}
+
+enum FlexDirectionEnum {
+  column
+  row
 }
 
 enum TypeContainerEnum {

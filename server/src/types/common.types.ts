@@ -34,3 +34,7 @@ export type Beer = {
   brands: string;
   volume: number;
 };
+
+export type Container = {
+  type: 'LAYOUT' | 'COMPONENTS' | 'TEMPLATE'
+}
