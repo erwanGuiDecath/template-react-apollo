@@ -22,7 +22,7 @@ type Context {
   id: ID!
   type: String!
   subType: String!
-  value: String
+  value: JSON
 }
 
 interface Container {
