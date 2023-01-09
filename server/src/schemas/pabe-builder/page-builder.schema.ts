@@ -10,6 +10,12 @@ type Page {
   name: String!
   title: String
   url: String
+  type: TypePageEnum
+}
+
+enum TypePageEnum {
+  HOME
+  LANDING
 }
 
 type Context {
@@ -22,7 +28,9 @@ type Context {
 type Container {
   id: ID!
   name: String
+  description: String
   type: TypeContainerEnum
+  scope: ScopeContainerEnum
   contexts: [Context!]!
 }
 
@@ -32,10 +40,17 @@ enum TypeContainerEnum {
   TEMPLATE
 }
 
+enum ScopeContainerEnum {
+  DEFAULT
+  LISTING
+  LANDING
+}
+
 type Component {
   id: ID!
   type: String!
   name: String!
   jsonSchema: JSON
+  values: JSON
 }
 `;

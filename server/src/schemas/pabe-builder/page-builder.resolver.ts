@@ -1,4 +1,4 @@
-import { GraphQLScalarType, GraphQLTypeResolver } from 'graphql';
+import { GraphQLScalarType } from 'graphql';
 import { Resolvers } from '../../types/common.types';
 
 const jsonScalar = new GraphQLScalarType({

@@ -1,0 +1,1 @@
+export { StrapiAPI } from './strapi.api'
