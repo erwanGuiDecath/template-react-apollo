@@ -13,9 +13,11 @@ const jsonScalar = new GraphQLScalarType({
 });
 
 export const pageBuilderResolver: Resolvers = {
-  jsonScalar,
+  JSON: jsonScalar,
   Query: {
-    
+    pages(type, args: any, ctx) {
+      return ctx.dataSources.strapiAPI.getPages();
+    },
   },
 
   Container: {

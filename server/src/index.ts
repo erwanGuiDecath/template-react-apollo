@@ -1,12 +1,12 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone'
-import { BeersAPI } from './api';
-import { beersResolver, beersSchema } from './schemas';
+import { BeersAPI, PageBuilderAPI, StrapiAPI } from './api';
+import { typeDefs, resolvers } from './schemas';
 import { AppContext } from './types/common.types';
 
 const server = new ApolloServer<AppContext>({
-  typeDefs: beersSchema,
-  resolvers: beersResolver,
+  typeDefs,
+  resolvers,
 });
 
 const { url } = await startStandaloneServer(server, {
@@ -15,6 +15,8 @@ const { url } = await startStandaloneServer(server, {
     return {
       dataSources: {
         beersAPI: new BeersAPI(),
+        pageBuilderAPI: new PageBuilderAPI(),
+        strapiAPI: new StrapiAPI(),
       },
     };
   },

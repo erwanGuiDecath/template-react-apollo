@@ -2,7 +2,7 @@ export const pageBuilderSchema = `#graphql
 scalar JSON
 
 type Query {
-  pages(type: TypePagesEnum!): [Page!]!
+  pages(type: TypePageEnum!): [Page!]!
 }
 
 type Page {

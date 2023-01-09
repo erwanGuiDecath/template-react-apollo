@@ -1,8 +1,12 @@
 import { GraphQLResolveInfo, GraphQLScalarType } from "graphql";
 import { BeersAPI } from "../api";
+import { PageBuilderAPI } from "../api/page-builder";
+import { StrapiAPI } from "../api/strapi";
 
 interface DataSources {
   beersAPI: BeersAPI;
+  pageBuilderAPI: PageBuilderAPI;
+  strapiAPI: StrapiAPI;
 }
 
 export type AppContext = {
