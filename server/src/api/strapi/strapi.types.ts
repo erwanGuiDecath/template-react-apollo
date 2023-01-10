@@ -103,6 +103,7 @@ export type PbComponent = {
 }
 
 export type PbComponentVariant = {
+  id: string
   name: string
   componentVariantId: string
   personalizationCampaigns?: string

@@ -9,8 +9,10 @@ type Page {
   id: ID!
   name: String!
   title: String
-  url: String
+  path: String
   type: TypePageEnum
+  published: Boolean!
+  container: Container
 }
 
 enum TypePageEnum {
