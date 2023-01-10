@@ -1,4 +1,5 @@
 import { GraphQLScalarType } from 'graphql';
+import { Page } from '../../api/strapi/strapi.types';
 import { Container, Resolvers } from '../../types/common.types';
 
 const jsonScalar = new GraphQLScalarType({
@@ -18,6 +19,10 @@ export const pageBuilderResolver: Resolvers = {
     pages(type, args: any, ctx) {
       return ctx.dataSources.strapiAPI.getPages();
     },
+  },
+
+  Page: {
+    id: (page: Page) => page.pageId
   },
 
   Container: {

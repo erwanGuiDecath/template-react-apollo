@@ -1,14 +1,9 @@
-import { RESTDataSource } from 'apollo-datasource-rest';
+import { RESTDataSource } from '@apollo/datasource-rest';
 import { beers } from '../../mocks/beers/beers.mock';
 import { Beer } from './beers.types';
 
 export class BeersAPI extends RESTDataSource {
-  constructor() {
-    // Always call super()
-    super();
-    // Sets the base URL for the REST API
-    this.baseURL = 'https://beers.com/';
-  }
+  override baseURL = 'https://beers.com/';
 
   async getBeers(): Promise<Beer[]> {
     return beers;
@@ -20,6 +15,6 @@ export class BeersAPI extends RESTDataSource {
   }
 
   async addBeer(beer: Beer): Promise<Beer> {
-    return this.post('beers', beer)
+    return this.post('beers', { body: beer })
   }
 }
