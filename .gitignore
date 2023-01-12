@@ -11,6 +11,7 @@
 # production
 /build
 /server/dist
+/ui/types
 
 # misc
 .DS_Store

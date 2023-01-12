@@ -1,5 +1,4 @@
 import React from 'react'
-import { map } from 'lodash'
 import { Beer } from './Beer/Beer'
 import { useBeers } from './Beers.hooks'
 import './Beers.css'
@@ -17,7 +16,7 @@ export function Beers() {
 
   return (
     <div className="beers-container">
-      {map(beers, beer => <Beer beer={beer} />)}
+      {beers.map((beer) => <Beer beer={beer} />)}
     </div>
   )
 }
