@@ -3,8 +3,6 @@ import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHt
 import { expressMiddleware } from '@apollo/server/express4';
 import express from 'express';
 import http from 'http';
-import cors from 'cors';
-import bodyParser from 'body-parser';
 
 import { BeersAPI, PageBuilderAPI, StrapiAPI } from './api';
 import { typeDefs, resolvers } from './schemas';
@@ -23,11 +21,6 @@ await server.start();
 
 app.use(
   '/graphql',
-  cors<cors.CorsRequest>(),
-  // 50mb is the limit that `startStandaloneServer` uses, but you may configure this to suit your needs
-  bodyParser.json({ limit: '50mb' }),
-  // expressMiddleware accepts the same arguments:
-  // an Apollo Server instance and optional configuration options
   expressMiddleware(server, {
     context: async ({ req }) => ({
       token: req.headers.token,
